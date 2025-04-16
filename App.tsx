@@ -1,16 +1,20 @@
 import { StatusBar } from 'expo-status-bar'
 import {
   Button,
+  KeyboardAvoidingView,
+  Platform,
   Pressable,
   StyleSheet,
   Text,
   TextInput,
-  View,
 } from 'react-native'
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      style={styles.container}
+    >
       <Text style={styles.title}>Sign in</Text>
       <TextInput style={styles.input} placeholder='Email' />
       <TextInput style={styles.input} placeholder='Password' secureTextEntry />
@@ -23,7 +27,7 @@ export default function App() {
         <Text style={styles.buttonText}>Sign in</Text>
       </Pressable>
       <StatusBar style='auto' />
-    </View>
+    </KeyboardAvoidingView>
   )
 }
 const styles = StyleSheet.create({
