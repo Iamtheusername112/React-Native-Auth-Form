@@ -16,7 +16,14 @@ export default function App() {
       style={styles.container}
     >
       <Text style={styles.title}>Sign in</Text>
-      <TextInput style={styles.input} placeholder='Email' />
+      <TextInput
+        style={styles.input}
+        placeholder='Email'
+        autoFocus
+        autoCapitalize='none'
+        keyboardType='email-address'
+        autoComplete='email'
+      />
       <TextInput style={styles.input} placeholder='Password' secureTextEntry />
       <Pressable
         onPress={() => {
